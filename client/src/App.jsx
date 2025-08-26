@@ -64,7 +64,7 @@ export default function Home() {
       setUserInput("");
 
       try {
-        const res = await fetch("http://localhost:5000/api/conversation", {
+        const res = await fetch("https://ai-mock-chatbot.vercel.app/api/conversation", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -96,7 +96,7 @@ export default function Home() {
   async function loadNextQuestion() {
     setIsTyping(true);
     try {
-      const res = await fetch("http://localhost:5000/api/questions", {
+      const res = await fetch("https://ai-mock-chatbot.vercel.app/api/questions", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ track }),
@@ -136,7 +136,7 @@ export default function Home() {
   async function endInterview() {
     setIsTyping(true);
     try {
-      const res = await fetch("http://localhost:5000/api/feedback", {
+      const res = await fetch("https://ai-mock-chatbot.vercel.app/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
